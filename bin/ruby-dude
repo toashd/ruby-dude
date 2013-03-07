@@ -1,0 +1,42 @@
+#!/usr/bin/env ruby
+
+require 'ruby_dude'
+require 'optparse'
+
+options = {}
+optparse = OptionParser.new do |opts|
+  opts.banner = "Usage: ruby-dude [options]"
+
+  opts.on('-p', '--paragraphs N', String, 'Number of paragraphs to generate') do |paragraphs|
+    options[:paragraphs] = paragraphs.to_s || '5'
+  end
+
+  opts.on('-c', '--no-cussin', String, 'Keep it squeaky clean for client work') do |cussin|
+    options[:cussin] = 'false'
+  end
+
+  opts.on('-m', '--mixed', String, 'Mix Lebowski quotes with old fashioned Lorem Ipsum') do |mixed|
+    options[:mixed] = 'true'
+  end
+
+  opts.on('-l', '--lebowskiipsum', String, "Start the first paragraph with 'Lebowski Ipsum'") do |lebowskiipsum|
+    options[:lebowskiipsum] = 'true'
+  end
+
+  opts.on('-t', '--html', String, 'Wrap your filler text in zee HTML tacs, OK?') do |html|
+    options[:html] = 'true'
+  end
+
+  opts.on('-b', '--character-buddies BUDDIES', String, 'Shut the fuck up, Donny!') do |characters|
+    options[:characters] = characters || '1'
+  end
+
+  opts.on('-h', '--help', "C'mon dude ...") do
+    puts opts
+    exit
+  end
+end
+
+optparse.parse!
+dude = RubyDude::LebowskiIpsum.generate options
+puts dude
