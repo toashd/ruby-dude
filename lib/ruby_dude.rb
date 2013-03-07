@@ -34,12 +34,12 @@ module RubyDude
 
       # http://www.lebowskiipsum.com/dude/generate/paragraphs/5/cussin/true/mixed/true/startleb/true/html/true/characters/1,2,3,4,5,8,9
       uri = 'http://www.lebowskiipsum.com/dude/generate' +
-                '/paragraphs/' + options[:paragraphs] +
-                '/cussin/' + options[:cussin] +
-                '/mixed/' + options[:mixed] +
-                '/startleb/' + options[:lebowskiipsum] +
-                '/html/' + options[:html] +
-                '/characters/' + options[:characters]
+              '/paragraphs/' + options[:paragraphs] +
+              '/cussin/' + options[:cussin] +
+              '/mixed/' + options[:mixed] +
+              '/startleb/' + options[:lebowskiipsum] +
+              '/html/' + options[:html] +
+              '/characters/' + options[:characters]
 
       req = URI.parse uri
       res = Net::HTTP.get_response req
