@@ -9,8 +9,9 @@ Gem::Specification.new do |gem|
   gem.authors       = ["Tobias Schmid"]
   gem.email         = ["toashd@gmail.com"]
   gem.description   = %q{A Lebowski Ipsum generator for ruby}
-  gem.summary       = %q{A Lebowski Ipsum generator for ruby}
+  gem.summary       = %q{Generate some filler text that ties the room together}
   gem.homepage      = %q{http://github.com/tobiasschmid/ruby-dude}
+  gem.licenses      = %w{MIT}
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
