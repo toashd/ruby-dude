@@ -33,7 +33,8 @@ Lebowski-fy the hell out of it by providing various optional parameters:
       :mixed         => 'false' # White Russian! Mix Lebowski quotes with old fashioned Lorem Ipsum.
       :lebowskiipsum => 'true'  # I'm the dude! Start the first paragraph with 'Lebowski Ipsum'.
       :html          => 'false' # Pigs in Blanket! Wrap your filler text in zee HTML tacs, OK?
-      :characters    => '1,2'   # Shut the fuck up, Donny! Want to refine the dialogue?})
+      :characters    => '1,2'   # Shut the fuck up, Donny! Want to refine the dialogue?
+    })
 
 On the command line:
 
