@@ -1,6 +1,7 @@
 require 'ruby-dude/version'
 require 'net/http'
 require 'open-uri'
+require 'nokogiri'
 require 'cgi'
 
 module RubyDude
@@ -28,7 +29,8 @@ module RubyDude
         mixed: 'false',
         lebowskiipsum: 'false',
         html: 'false',
-        characters: '1'}
+        characters: '1'
+      }
 
       options = defaults.merge(options)
 
@@ -45,10 +47,10 @@ module RubyDude
       res = Net::HTTP.get_response req
 
       if res.code == '200'
-        # It's basically a bad idea to parse html by regex
-        # This should actually be done w/ a qualified parser like nokogiri or hpricot
-        matches = res.body.match /(?:<textarea(?:.*)id="lebowskiIpsum"(?:.*)>)([\s\S]*)?(?:<\/textarea>)/m
-        CGI.unescapeHTML(matches[1]).force_encoding('UTF-8') if matches[1]
+        page = Nokogiri::HTML(res.body)
+        text = page.css('textarea#lebowskiIpsum').text
+
+        CGI.unescapeHTML(text).force_encoding('UTF-8') if text
       else
         'Well, uh ... looks like you got the wrong guy.'
       end
