@@ -10,7 +10,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["toashd@gmail.com"]
   gem.description   = %q{A Lebowski Ipsum generator for ruby}
   gem.summary       = %q{Generate some filler text that ties the room together}
-  gem.homepage      = %q{http://github.com/tobiasschmid/ruby-dude}
+  gem.homepage      = %q{http://github.com/toashd/ruby-dude}
   gem.licenses      = %w{MIT}
 
   gem.files         = `git ls-files`.split($/)
@@ -21,3 +21,4 @@ Gem::Specification.new do |gem|
   gem.add_dependency 'rake'
   gem.add_dependency 'nokogiri'
 end
+
